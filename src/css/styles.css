@@ -24,6 +24,8 @@ li {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+  border-radius: 15px;
+  border-color: rgb(197, 197, 221);
 }
 
 .country {
