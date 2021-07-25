@@ -46,7 +46,7 @@ li {
   margin-right: 10px;
 }
 
-.country-info {
+.country-info, .language-item {
   margin: 1em 0 .6em 0;
     padding: 0 0 0 20px;
     font-weight: normal;
@@ -60,10 +60,6 @@ li {
 
 .description {
   font-weight: bold;
-}
-
-.languages-list {
-  display: block;
 }
 
 
