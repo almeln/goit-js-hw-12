@@ -1,9 +1,7 @@
 import './css/styles.css';
-// import './js/api';
 
 import getRefs from './js/get-refs';
 
-// import { refs } from './js/refs';
 import { fetchCountries } from './js/fetchCountries';
 import Notiflix from "notiflix";
 
@@ -37,7 +35,7 @@ function onSearch(e) {
 function renderCountryCard (country) {
     clearCountryCard();
     if (country.length > 10) {
-        Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
+       Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
     } else if (country.length === 1) {
         markupCountryCard(country);
     } else {

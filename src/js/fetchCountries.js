@@ -4,9 +4,9 @@ export function fetchCountries (name) {
     const FILTRES = 'fields=name;capital;population;flag;languages';
     return fetch(`${BASE_URL}/name/${name}?${FILTRES}`)
     .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new onFetchError();
+        if (!response.ok) {
+            throw new onFetchError(response.status);
+          }
+          return response.json();
     });
 }
