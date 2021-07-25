@@ -3,7 +3,7 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"EGsz":[function(require,module,exports) {
 "use strict";function e(){return{input:document.getElementById("search-box"),countryList:document.querySelector(".country-list"),countryInfo:document.querySelector(".country-info")}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
 },{}],"irxn":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchCountries=t;const e="https://restcountries.eu/rest/v2";function t(t){return fetch(`${e}/name/${t}?fields=name;capital;population;flag;languages`).then(e=>{if(e.ok)return e.json();throw new onFetchError})}
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchCountries=t;const e="https://restcountries.eu/rest/v2";function t(t){return fetch(`${e}/name/${t}?fields=name;capital;population;flag;languages`).then(e=>{if(!e.ok)throw new onFetchError(e.status);return e.json()})}
 },{}],"xeAG":[function(require,module,exports) {
 var define;
 var global = arguments[3];
@@ -22,4 +22,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./css/styles.css");var e=u(require("./js/get-refs")),t=require("./js/fetchCountries"),n=u(require("notiflix")),r=u(require("./templates/country.hbs")),i=u(require("./templates/countries-list.hbs"));function u(e){return e&&e.__esModule?e:{default:e}}const o=require("lodash.debounce"),s=300,c=(0,e.default)();function f(e){e.preventDefault();let n=e.target.value.trim();n?(0,t.fetchCountries)(n).then(a).catch(y):l()}function a(e){l(),e.length>10?n.default.Notify.info("Too many matches found. Please enter a more specific name."):1===e.length?h(e):d(e)}function l(){c.countryInfo.innerHTML="",c.countryList.innerHTML=""}function h(e){const t=(0,r.default)(e);c.countryInfo.innerHTML=t}function d(e){const t=(0,i.default)(e);c.countriesInfo.innerHTML=t}function y(){console.log("ERROR"),n.default.Notify.failure("Oops, there is no country with that name.")}c.input.addEventListener("input",o(f,300));
 },{"./css/styles.css":"krre","./js/get-refs":"EGsz","./js/fetchCountries":"irxn","notiflix":"xeAG","./templates/country.hbs":"xAbl","./templates/countries-list.hbs":"VUQC","lodash.debounce":"PZFh"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-12/src.0c40041c.js.map
+//# sourceMappingURL=/goit-js-hw-12/src.cd622876.js.map
